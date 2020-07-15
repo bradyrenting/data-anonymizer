@@ -61,11 +61,19 @@ Graphical User Interface (for generating configuration file)
 - `--pass <PASSWORD>` Password of MariaDB/MySQL server
 - `--db <DATABASE>` Temporary database
 
-## Author
+## Authors
 
 👤 **curant**
 
 * Github: [@curant](https://github.com/curant)
+
+👤 **Redlolz**
+
+* Github: [@Redlolz](https://github.com/Redlolz)
+
+👤 **binari**
+
+* Github: [@binari](https://github.com/binari)
 
 ## Show your support
 
