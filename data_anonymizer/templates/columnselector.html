@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/bootstrap.css') }}">
+
+    {# Scripts #}
+    <script type="text/javascript" src="../static/js/jquery.js"></script>
+    <script type="text/javascript" src="../static/js/main.js"></script>
+</head>
+
+<body>
+<div class="container">
+    <div class="vh-1">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../">Table Selector</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Column Selector</li>
+        </ol>
+    </div>
+
+    <form action="{{ url_for('action') }}" method="POST">
+        {% for table in tables %}
+            <h3>{{ table }}</h3>
+            <table>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="iterator{{ table }}">Iterator</label>
+                        <select class="custom-select form-control" name="*iterator*{{ table }}"
+                                id="iterator{{ table }}">
+                            {% for column in tables[table] %}
+                                <option value="{{ column }}">{{ column }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    {% for column in tables[table] %}
+                        <div class="form-group col-md-3">
+                            <label for="{{ column }}">{{ column }}</label>
+                            <select name="{{ table }}!?!{{ column }}!?!type"
+                                    onChange="checkFormValue(this.value, '{{ table }}-{{ column }}');"
+                                    class="custom-select form-control"
+                                    id="{{ column }}">
+                                <option value="None">No Change</option>
+                                <option value="first_name">first_name</option>
+                                <option value="middle_name">middle_name</option>
+                                <option value="last_name">last_name</option>
+                                <option value="phone_number">phone_number</option>
+                                <option value="marvel_character">marvel_character</option>
+                                <option value="marvel_locations">marvel_locations</option>
+                                <option value="date">date</option>
+                                <option value="int">int</option>
+                                <option value="string">string</option>
+                                <option value="bool">bool</option>
+                            </select>
+
+                            {% for selected_table in selected %}
+                                {% for selected_column in selected[selected_table] %}
+                                    {% if selected_column == column %}
+                                        <script>
+                                            $(function () {
+                                                let type = "{{ selected[selected_table][selected_column]['type'] }}";
+                                                $("#{{ column }}").val(type);
+                                            });
+                                        </script>
+
+                                        {% if selected[selected_table][selected_column]['data'] is defined %}
+                                            <script>
+                                                $(function () {
+                                                    let value = "{{ selected[selected_table][selected_column]['data'] }}";
+                                                    $("#{{ table }}-{{ column }}").val(value);
+                                                    $("#{{ table }}-{{ column }}").prop('disabled', false);
+                                                });
+                                            </script>
+                                        {% endif %}
+
+                                    {% endif %}
+                                {% endfor %}
+                            {% endfor %}
+
+                            <input
+                                    class="form-control disabled"
+                                    type="text"
+                                    name="{{ table }}!?!{{ column }}!?!data"
+                                    id="{{ table }}-{{ column }}"
+                                    disabled>
+                        </div>
+                    {% endfor %}
+                </div>
+            </table>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</body>
+</html>

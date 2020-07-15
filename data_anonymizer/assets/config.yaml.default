@@ -1,0 +1,45 @@
+# |     .-.
+# |    /   \         .-.
+# |   /     \       /   \       .-.     .-.     _   _
+# +--/-------\-----/DATA-ANONYMIZER\---/---\---/-\-/-\/\/---
+# | /         \   /       \   /     '-'     '-'
+# |/           '-'         '-'
+
+# Fill in database credentials.
+storage:
+    host: 127.0.0.1
+    user: root
+    password: toor
+    database: anonymizer
+
+anonymize:
+#    Note: This section is used for defining which rows in which 
+#    table in the database needs to be anonymized. It is also used
+#    for defing which type of anonymization corresponds with which 
+#    row.
+#    types: 
+#        - firstname
+#        - middlename
+#        - lastname
+#        - date
+#        - static
+#        - email
+#        - phoneNumber
+#	 - random
+#    Syntax:  <TableName>:
+#                  <RowName>:
+#		       type: <Type>
+#
+    core_users:
+        first_name:
+            type: first_name
+        last_name:
+            type: last_name
+        middle_name:
+            type: middle_name
+        bit_academy_start_date:
+            type: date
+            data: 22-2-2020
+        password:
+            type: string
+            data: $2a$10$/2BXXQ3fmNBGq9sB41epNu95YVup5Dao2RDnzdBvG7GNAG27C/Oc2

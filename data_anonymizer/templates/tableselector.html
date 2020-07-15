@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/bootstrap.css') }}">
+
+    {# Scripts #}
+    <script type="text/javascript" src="../static/js/jquery.js"></script>
+    <script type="text/javascript" src="../static/js/main.js"></script>
+</head>
+<body>
+<div class="container">
+
+    <div class="vh-1">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">Table Selector</li>
+        </ol>
+    </div>
+
+    <div class="custom-control custom-switch col">
+        <input type="checkbox" class="custom-control-input" id="select_all" name="select_all">
+        <label class="custom-control-label" for="select_all">Select all</label>
+    </div>
+    <form action="{{ url_for('columnselector') }}" method="POST">
+        <div class="container row row-cols-3">
+            <table>
+                {% for table in tables %}
+                    <div class="custom-control custom-switch col">
+                        <input type="checkbox" class="custom-control-input switch" id="{{ table }}"
+                               name="{{ table }}"
+                                {% if selected %}
+                                    {% for selected_table in selected %}
+                                        {% if selected_table == table %}
+                               checked
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endif %}>
+                        <label class="custom-control-label" for="{{ table }}">{{ table }}</label>
+                    </div>
+                {% endfor %}
+            </table>
+        </div>
+        <button type="submit" class="btn btn-primary vh-1">Submit</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,3 @@
+flask
+ruamel.yaml
+mysql-connector-python-rf
