@@ -63,9 +63,9 @@ Graphical User Interface (for generating configuration file)
 
 ## Authors
 
-👤 **curant**
+👤 **Brady Renting**
 
-* Github: [@curant](https://github.com/curant)
+* Github: [@bradyrenting](https://github.com/curant)
 
 👤 **Redlolz**
 
@@ -74,6 +74,10 @@ Graphical User Interface (for generating configuration file)
 👤 **binari**
 
 * Github: [@binari](https://github.com/binari)
+
+👤 **Benjamin Roest**
+
+* Github: [@benjaminroest](https://github.com/benjaminroest)
 
 ## Show your support
 
