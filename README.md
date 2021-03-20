@@ -71,9 +71,9 @@ Graphical User Interface (for generating configuration file)
 
 * Github: [@Redlolz](https://github.com/Redlolz)
 
-👤 **binari**
+👤 **Wout Meijer**
 
-* Github: [@binari](https://github.com/binari)
+* Github: [@woutmeijer](https://github.com/woutmeijer)
 
 👤 **Benjamin Roest**
 
