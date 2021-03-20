@@ -86,5 +86,4 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-Copyright © 2020 [curant](https://github.com/curant).<br />
 This project is [GPL-3.0](https://github.com/curant/data-anonymizer/blob/master/LICENSE) licensed.
