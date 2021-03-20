@@ -65,7 +65,7 @@ Graphical User Interface (for generating configuration file)
 
 👤 **Brady Renting**
 
-* Github: [@bradyrenting](https://github.com/curant)
+* Github: [@bradyrenting](https://github.com/bradyrenting)
 
 👤 **Redlolz**
 
